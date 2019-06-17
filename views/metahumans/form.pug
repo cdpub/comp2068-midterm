@@ -1,0 +1,25 @@
+form(action=(metahuman ? `/metahumans/update` : "/metahumans"), method="POST")
+  if metahuman
+    input(type="hidden", name="id", value=metahuman.id)
+
+  .form-group
+    label Metahumans
+    input.form-control(name="metahuman[alias]", required, value=(metahuman ? metahuman.alias : null))
+
+  .form-group
+    label Fullname
+    textarea.form-control(name="metahuman[fullname]")
+      = metahuman ? metahuman.fullname : null
+
+  .form-group
+    label Affiliation
+    textarea.form-control(name="metahuman[affiliation]")
+      = metahuman ? metahuman.affiliation : null    
+
+  .form-group
+    label Metatype
+    textarea.form-control(name="metahuman[metatype]")
+      = metahuman ? metahuman.metatype : null    
+
+  .form-group
+    button.btn.btn-dark(type="submit") Submit

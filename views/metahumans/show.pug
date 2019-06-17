@@ -1,0 +1,11 @@
+extends ../layouts/main.pug
+block content
+  .container
+    header
+      h5= job.alias
+    ul
+      li= `Full Name: ${metahuman.fullname}`
+      li= `Affiliation: ${metahuman.affiliation}`  
+      li= `Metatype: ${metahuman.metatype}` 
+      li= `Status: ${job.status}` 
+
